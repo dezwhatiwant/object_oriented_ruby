@@ -40,4 +40,4 @@ windex = Item.new(
 
 p carrot.price
 carrot.price = 6
-puts carrot.price, carrot.color, carrot.department
+p carrot.price, carrot.color, carrot.department
