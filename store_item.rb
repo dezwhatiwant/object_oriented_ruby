@@ -8,10 +8,10 @@ class Item
   attr_reader :color, :price, :department
   attr_writer :price
 
-  def initialize(input_color, input_price, input_department)
-    @color = input_color
-    @price = input_price
-    @department = input_department
+  def initialize(input_options)
+    @color = input_options [:color]
+    @price = input_options [:price]
+    @department = input_options [:department]
   end
 
   def print_info
@@ -19,9 +19,24 @@ class Item
   end
 end
 
-carrot = Item.new("orange", 2, "grocery")
-battery = Item.new("black", 4, "household")
-windex = Item.new("blue", 1, "cleaners")
+carrot = Item.new(
+                  color: "orange",
+                  price: 2,
+                  department: "grocery"
+                  )
+
+battery = Item.new(
+                   color: "black",
+                   price: 4,
+                   department: "household"
+                   )
+
+windex = Item.new(
+                  color: "blue",
+                  price: 1,
+                  department: "cleaners"
+                  )
+
 
 p carrot.price
 carrot.price = 6
